@@ -1,0 +1,67 @@
+<html>
+  <head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+  
+      google.load('visualization', '1.0', {'packages':['corechart'], 'language': 'es'});
+
+     
+      google.setOnLoadCallback(drawChart);
+
+    
+      function drawChart() {
+
+   
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Questions');
+        data.addColumn('number', 'Answers');
+        data.addRows([
+          ['Renta variable', 46.7],
+          ['Renta fija gubernamental', 20],
+          ['Renta fija corporativa', 16.7],
+          ['Otros (Alternativos, Inmobiliario, Materias Primas, Monetarios)', 16.7]
+   
+        ]);
+		
+	var formatter = new google.visualization.NumberFormat({
+    suffix:'%',fractionDigits:'1'
+	
+});
+
+formatter.format(data, 1);
+	 
+        var options = {    
+                       'width':1050,
+                       'height':400};
+  options.colors = ['#AB8433' , '#9E8F6C' , '#8D9091' , '#616265' ];
+  options.tooltipText = ['value']
+	options.pieSliceText = ['value']
+	
+	
+	
+	
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
+  <body><div style="position:relative;width:100%"><div align="center"><img border="0" align="center" id="image-placeholder" title="VIC_map_confirmation_header_2" src="http://surveygizmolibrary.s3.amazonaws.com/library/209091/Keyline_750_survey_banner.jpg" mdid="be28d0d1-5d3e-4676-8867-d0f044be4b04" />
+  
+  
+  <table width="750" align="center">
+  <tr>
+  <td></br><p align="left" style="font-family: Arial,Helvetica,sans-serif;">
+<strong><font size="3" color="#ab8433">&iquest;Qu&eacute; clase&nbsp;de activo Europeo&nbsp;ofrecer&aacute; mejores resultados en 2013? </font></strong></p>
+<p style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">Más de un 45% de los encuestados esperan que la renta variable batirá al resto de segmentos en 2013, y un 20% se inclina por la deuda pública. La deuda privada y el resto de clases de activo se anotaron, respectivamente, algo menos del 17% de los votos. Esta respuesta sugiere que el apetito de riesgo de los inversores permanece intacto, pese al difícil trasfondo económico. </p>
+  
+  <p style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">No obstante, a juzgar por los últimos cuatro años, la volatilidad será un factor clave a tener en cuenta durante el próximo año; en este contexto, es probable que un entorno de inversión flexible se vea recompensado. <a href="http://www.google.com" style="color: #ab8433;">Cerrar</a></p>
+  </td>
+  </tr>
+  </table>
+</div>
+    <div align="center" id="chart_div"></div>
+    </div>
+  </body>
+</html>
